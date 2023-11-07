@@ -5,7 +5,7 @@ import numpy as np
 from scipy.stats import norm, expon, uniform
 
 
-class EvoBinningSolver(ea.MoeaAlgorithm):
+class EvoBinningOptimizer(ea.MoeaAlgorithm):
     def __init__(self,
                  problem,
                  population,
@@ -79,7 +79,7 @@ class EvoBinningSolver(ea.MoeaAlgorithm):
         return self.finishing(population)
 
 
-class ProphetGenerator(object):
+class PDAInitializer(object):
     def __init__(self, prebins_data, init_strategy, segments_num, pop_size):
         self.data = prebins_data
         self.init_strategy = init_strategy
@@ -333,11 +333,7 @@ class ProphetGenerator(object):
             if p_first <= p1_max:
                 for i in range(prebins_num - 1, j, -1):
                     if 1 - cure_rate[i] > p_first + 1e-8:
-                        p_last = 0
-                        if i == prebins_num - 1:
-                            p_last = cure_rate[i]
-                        else:
-                            p_last = cure_rate[i + 1]
+                        p_last = cure_rate[i]
                         st = norm.ppf(p_first)
                         ed = norm.ppf(p_last)
                         xi = np.linspace(st, ed, segments_num - 1)
