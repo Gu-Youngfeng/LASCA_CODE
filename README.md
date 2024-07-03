@@ -68,4 +68,9 @@ LASCA
 Notes for the project structure:
 - The files in the folder `core` are the main components of the algorithms.
 - The files in the folder `utils` are some useful functions for the implementation of LASCA.
-- The files in the folder `data` are the user datasets of each task. Since the three real-world user datasets classified, a demo user dataset is provided.
+- The files in the folder `data` are the user datasets of each task. Since the three real-world user datasets are classified, a demo user dataset is provided.
+
+## Citation
+This paper has been accepted by the SIGKDD 2024 conference. Should you find our work beneficial to your studies or work, we kindly request that you acknowledge our contributions by citing our work:
+
+> Yongfeng Gu, Yupeng Wu, Huakang Lu, Xingyu Lu, Hong Qian, Jun Zhou, and Aimin Zhou. 2024. LASCA: A Large-Scale Stable Customer Segmentation Approach to Credit Risk Assessment. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’24).
